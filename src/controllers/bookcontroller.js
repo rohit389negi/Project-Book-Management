@@ -284,9 +284,9 @@ const update = async function (req, res) {
     try {
         //const requestbody= req.body
         let decodedUserToken = req.user;
-        console.log(req.params);
+       // console.log(req.params);
         let bookUser = await BookModel.findOne({ _id: req.params.bookId });
-        console.log(bookUser);
+      //  console.log(bookUser);
         if (decodedUserToken.userId == bookUser.userId) {
             if (bookUser.isDeleted == true) {
                 return res
@@ -343,7 +343,7 @@ const update = async function (req, res) {
                         });
                 }
 
-                console.log(newdata);
+             //   console.log(newdata);
 
                 res.status(200).send({ status: true, data: newdata });
             }
